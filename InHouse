@@ -1,0 +1,34 @@
+package c482.Model;
+
+import c482.Model.Part;
+
+/**InHouse will model an InHouse part. **/
+public class InHouse extends Part {
+    /**
+     * This represents the MachineID for the InHouse.
+     */
+    private int machineID;
+
+    /**id - ID for the part
+     name - name of the part
+     price - price of the part
+     stock - inventory level of the part
+     min - minimum level for the part
+     max - maximum level for the part
+     machineId - machine ID for the part**/
+
+    /** The Constructor for new instance of InHouse. **/
+    public InHouse(int id, String name, double price, int stock, int min, int max, int machineID) {
+        super(id, name, price, stock, min, max);
+        this.machineID = machineID;
+    }
+
+/** MachineID's getter. Returns the MachineID**/
+    public int getMachineID() {
+        return machineID;
+    }
+    /** MachineID's setter**/
+    public void setMachineID(int machineID) {
+        this.machineID = machineID;
+    }
+}
