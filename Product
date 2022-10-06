@@ -1,0 +1,105 @@
+package c482.Model;
+
+import c482.Model.Part;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+/** Product models a product that may have associated parts along it. **/
+public class Product {
+
+    private ObservableList<Part> associatedParts = FXCollections.observableArrayList();
+    private int id;
+    private String name;
+    private double price;
+    private int stock;
+    private int min;
+    private int max;
+
+    /** Constructor for new instance of product**/
+    public Product(int id, String name, double price, int stock, int min, int max ) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+        this.min = min;
+        this.max = max;
+
+        /**id - ID for the product
+         name - name of the product
+         price - price of the product
+         stock - inventory level of the product
+         min - minimum level for the product
+         max - maximum level for the product**/
+
+    }
+
+    /** Setter for Id**/
+    public void setId(int id) {
+        this.id = id;
+    }
+    /** Setter for Name**/
+    public void setName(String name) {
+        this.name = name;
+    }
+    /** Setter for Price**/
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    /** Setter for Stock**/
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+    /** Setter for Min**/
+    public void setMin(int min) {
+        this.min = min;
+    }
+    /** Setter for Max**/
+    public void setMax(int max) {
+        this.max = max;
+    }
+
+    /** Getter for Id**/
+    public int getId() {
+        return id;
+    }
+
+    /** Getter for Name**/
+    public String getName() { return name; }
+
+    /** Getter for Price**/
+    public double getPrice() {
+        return price;
+    }
+    /** Getter for Stock**/
+    public int getStock() {
+        return stock;
+    }
+    /** Getter for Min**/
+    public int getMin() {
+        return min;
+    }
+
+    /** Getter for Max**/
+    public int getMax() {
+        return max;
+    }
+
+    /** Adds part to associated parts list for product. **/
+    public void addAssociatedPart(ObservableList<Part> part){
+        this.associatedParts.addAll(part);
+    }
+
+    /** Removes part from associated parts list for product. **/
+    public boolean deleteAssociatedPart(Part selectedAssociatedPart ) {
+        return false;
+
+    }
+
+//    public static boolean deleteAssociatedPart(Part selectedAssociatedPart){
+//        return allParts.remove(selectedAssociatedPart);
+
+    /** Gets a list of associated parts for the Product. **/
+    public ObservableList<Part> getAllAssociatedParts(){
+        return associatedParts;
+    }
+}
