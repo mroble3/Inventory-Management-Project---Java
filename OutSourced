@@ -1,0 +1,37 @@
+package c482.Model;
+
+import c482.Model.Part;
+
+/** OutSourced will model an outsourced part. **/
+public class OutSourced extends Part {
+    private String companyName;
+
+/** This is a Constructor for a new instance of OutSourced Part. **/
+    public OutSourced(int id, String name, double price, int stock, int min, int max, String companyName) {
+        super(id, name, price, stock, min, max);
+        this.companyName = companyName;
+    }
+
+    /**id - ID for the part
+     name - name of the part
+     price - price of the part
+     stock - inventory level of the part
+     min - minimum level for the part
+     max - maximum level for the part
+     companyName - company name for part**/
+
+    public static boolean isSelected() {
+
+        return false;
+    }
+
+    /** Getter for companyName**/
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    /** Setter for companyName**/
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+}
