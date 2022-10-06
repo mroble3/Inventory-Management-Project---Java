@@ -1,0 +1,55 @@
+package c482.Main;
+
+//Mohamed Roble
+//Student ID: 000975812
+
+
+
+import c482.Model.*;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+/**The Inventory Management System Implements an application that manages an inventory of products and parts. An implementation that can be made in the future is to implement a way to rule the parts that can be duplicated within a product.**/
+public class Main extends Application {
+    /** Start method creates the fxml stage which then loads the initial scene.**/
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
+        //Add Parts InHouse
+        Inventory.addPart(new InHouse(1, "Lamborghini Huracan",59.99,20, 1, 50, 19));
+        Inventory.addPart(new InHouse(2, "Ferrari 458",59.99,25, 1, 50,   12));
+        Inventory.addPart(new InHouse(3, "Porsche GT3RS",49.99,15, 1, 50,   82));
+        Inventory.addPart(new InHouse(4, "Tesla Plaid",29.99,10, 1, 50,   99));
+
+        //Add Parts OutSourced
+        Inventory.addPart(new OutSourced(5, "Audi R8",39.99,10, 1, 50,"Volkswagon Group"));
+        Inventory.addPart(new OutSourced(6, "Ford GT",9.99,5, 1, 50,   "Ford Motors"));
+        Inventory.addPart(new OutSourced(7, "Mercedes GT",0.00,20, 1, 50,   "Daimler AG"));
+        Inventory.addPart(new OutSourced(8, "Nissan GTR",44.99,25, 1, 50,   "Renault"));
+        Inventory.addPart(new OutSourced(9, "Toyota Supra",35.99,5, 1, 50,   "Toyota Motor Corp"));
+        Inventory.addPart(new OutSourced(10, "Acura NSX",49.99,20, 1, 50,   "Honda"));
+        Inventory.addPart(new OutSourced(11, "BMW M4", 49.9925,30 ,1, 50,  "BMW Group"));
+
+        //Add Products
+        Inventory.addProduct(new Product(1, "Lamborghini Aventador SVJ",249.99, 10, 1,  50));
+        Inventory.addProduct(new Product(2, "Bugatti Chiron Hermes",159.99, 8, 1,  50));
+        Inventory.addProduct(new Product(3, "McLaren Speedtail",159.99, 8, 1,  50));
+
+
+
+        Parent root = FXMLLoader.load(getClass().getResource("/view/MainWindow.fxml"));
+        Scene scene = new Scene(root, 1280, 580);
+        primaryStage.setTitle("Inventory Management System");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+    }
+    /** Main method is the entry point of the application. **/
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+}
