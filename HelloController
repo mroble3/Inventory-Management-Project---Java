@@ -1,0 +1,30 @@
+package c482.Main;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+/** Our Hello Controller. **/
+public class HelloController implements Initializable {
+
+    public Label TheLabel;
+
+    /** Int for count. **/
+    public int count = 1;
+
+    /** This Initializes the Controller. **/
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("I am initialized");
+    }
+
+/** Action Event for On Button Clicked. **/
+    public void OnButtonClicked(ActionEvent actionEvent) {
+        System.out.println("I am clicked");
+        TheLabel.setText("You clicked the button" + count++);
+    }
+}
